@@ -1,3 +1,5 @@
+![request-response-cycle](./request-response%20cycle.png)
+
 # city explorer
 
 **Author**: eyad mansour
@@ -5,32 +7,30 @@
 
 ## Overview
 
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+we can use this web site to look for city and country, but if we provide another api with it will be more usful to make the map work and you can press on it.
 
 ## Getting Started
 
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+they need to type the name of the city for example and then they can find the coordinate and the picture they want.
 
 ## Architecture
 
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+i used postman and locationIQ.
 
 ## Change Log
 
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+31/7/2022 11:14pm - coudnt complete the task was not hard at all but i couldnt connect all the information after reading and looking for answers .
 
 ## Credit and Collaborations
 
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+ahmad abu ali - we worked togather to finish the request-response cycle
 
-Name of feature: ******\*\*******\_\_\_\_******\*\*******
+Name of feature: Map
 
-Estimate of time needed to complete: **\_**
+Estimate of time needed to complete: 5 hours
 
-Start time: **\_**
+Start time: 2pm
 
-Finish time: **\_**
+Finish time: 11pm
 
-Actual time needed to complete: **\_**
+Actual time needed to complete: still in progress.
