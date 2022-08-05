@@ -5,6 +5,7 @@ import axios from "axios";
 import DisplayedInformation from "./component/DiplayedInformation";
 import Map from "./component/Map";
 import ErrorComp from "./component/ErrorComp";
+import Weather from "./component/Weather";
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +18,8 @@ class App extends Component {
       displayInfo: false,
       errorMsg: "",
       displayErr: false,
+      weather: [],
+      isWeather: false,
     };
   }
 
@@ -41,7 +44,6 @@ class App extends Component {
       // fucntion to send the data
       this.displayMap(city.data[0].lat, city.data[0].lon);
       this.displayWeather(searchQuery, city.data[0].lat, city.data[0].lon);
-      this.fetchMovies(searchQuery);
     } catch (error) {
       // if the try didnt work catch will get the error and send it
       console.log(error);
@@ -60,6 +62,25 @@ class App extends Component {
       map_src: mapSrc,
     });
   };
+
+  displayWeather = async (searchQuery, lat, lon) => {
+    try {
+      const weatherData = await axios.get(
+        `https://city-explor-api.herokuapp.com/weather?searchQuery=${searchQuery}&lat=${lat}&lon=${lon}`
+      );
+      this.setState({
+        isWeather: true,
+        weather: weatherData.data,
+      });
+    } catch (error) {
+      this.setState({
+        errorMsg: error.response.status + ": " + error.response.data.error,
+        displayErr: true,
+        isWeather: false,
+        displayInfo: false,
+      });
+    }
+  };
   render() {
     return (
       <div className="App">
@@ -69,6 +90,9 @@ class App extends Component {
             <DisplayedInformation cityInfo={this.state} />
             <Map mapSource={this.state.map_src} />
           </>
+        )}
+        {this.state.isWeather && (
+          <Weather weatherInformation={this.state.weather} />
         )}
         {this.state.displayErr && <ErrorComp error={this.state.errorMsg} />}
       </div>
