@@ -89,7 +89,7 @@ class App extends Component {
   fetchMovies = async (searchQuery) => {
     try {
       const movieData = await axios.get(
-        `http://localhost:3001/movies?searchQuery=${searchQuery}`
+        `https://city-explorer-e.herokuapp.com/movies?searchQuery=${searchQuery}`
       );
       this.setState({
         movies: movieData.data,
