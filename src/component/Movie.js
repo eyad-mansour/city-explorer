@@ -1,14 +1,9 @@
 import React from "react";
+import SingleMovie from "./SingleMovie";
 
 class Movie extends React.Component {
   render() {
-    return this.props.movie.map((item) => (
-      <>
-        <p>{item.title}</p>
-        <p>{item.released_on}</p>
-        <p>{item.popularity}</p>
-      </>
-    ));
+    return this.props.movie.map((item) => <SingleMovie movieData={item} />);
   }
 }
 export default Movie;
